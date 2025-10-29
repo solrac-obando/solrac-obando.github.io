@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Desarrollador Frontend profesional en Venezuela. Landing pages desde $120, sitios web corporativos $200, blogs con Supabase $600. Especializado en HTML5, CSS3, JavaScript, automatizaciones con n8n y Make.">
+    <meta name="keywords" content="desarrollador frontend, venezuela, landing pages, sitios web, blogs, tailwind css, bootstrap, supabase, ingeniero sistemas, automatizaciones, n8n, make, ia">
+    <meta name="author" content="Ingeniero en Sistemas - Frontend Developer">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="language" content="Spanish">
+    <meta name="geo.region" content="VE-M">
+    <meta name="geo.placename" content="Mérida, Venezuela">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tusitio.com">
+    <meta property="og:title" content="Desarrollador Frontend Profesional | Venezuela">
+    <meta property="og:description" content="Servicios profesionales de desarrollo frontend. Landing pages, sitios web corporativos, blogs y automatizaciones con IA. Mérida, Venezuela.">
+    <meta property="og:image" content="https://tusitio.com/resources/hero-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_VE">
+    <meta property="og:site_name" content="DevFrontend">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://tusitio.com">
+    <meta property="twitter:title" content="Desarrollador Frontend Profesional | Venezuela">
+    <meta property="twitter:description" content="Landing pages desde $120, sitios web corporativos $200, blogs $600. Automatizaciones con n8n y Make.">
+    <meta property="twitter:image" content="https://tusitio.com/resources/hero-image.png">
+
+    <!-- Additional SEO -->
+    <link rel="canonical" href="https://tusitio.com">
+    <meta name="theme-color" content="#3B82F6">
+    <title>Desarrollador Frontend Profesional | Mérida, Venezuela | Servicios Web</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Preconnect para optimización -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+</head>
+<body class="bg-gray-50" style="color: var(--text);">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="text-xl font-bold text-white">
+                        <i class="fas fa-code mr-2" style="color: var(--accent);"></i>
+                        DevFrontend
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-white font-medium">Inicio</a>
+                    <a href="#services" class="nav-link text-white font-medium">Servicios</a>
+                    <a href="#portfolio" class="nav-link text-white font-medium">Portafolio</a>
+                    <a href="#contact" class="nav-link text-white font-medium">Contacto</a>
+                    <a href="https://es.pro.fiverr.com/s/6YD72VA" target="_blank" class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">
+                        <i class="fab fa-fiverr mr-2"></i>Contratar en Fiverr
+                    </a>
+                </div>
+                
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-800 bg-opacity-95">
+            <div class="px-4 py-4 space-y-4">
+                <a href="#home" class="block text-white font-medium">Inicio</a>
+                <a href="#services" class="block text-white font-medium">Servicios</a>
+                <a href="#portfolio" class="block text-white font-medium">Portafolio</a>
+                <a href="#contact" class="block text-white font-medium">Contacto</a>
+                <a href="https://es.pro.fiverr.com/s/6YD72VA" target="_blank" class="block btn-primary text-white px-4 py-2 rounded-lg font-semibold text-center">
+                    <i class="fab fa-fiverr mr-2"></i>Contratar en Fiverr
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center relative">
+        <div id="particles-js" class="particles-js"></div>
+        <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="fade-in">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                    Transformo Ideas en
+                    <span style="color: var(--accent);">Experiencias Web</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                    Ingeniero en Sistemas especializado en desarrollo frontend. 
+                    Creo soluciones web modernas, rápidas y optimizadas para tu negocio.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#services" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg">
+                        <i class="fas fa-rocket mr-2"></i>Ver mis servicios
+                    </a>
+                    <a href="#contact" class="glass-effect text-white px-8 py-4 rounded-lg font-semibold text-lg border border-white border-opacity-30 hover:bg-white hover:bg-opacity-20 transition-all duration-300">
+                        <i class="fas fa-envelope mr-2"></i>Contactar
+                    </a>
+                </div>
+                <div class="mt-12 text-gray-300">
+                    <p class="mb-2">📍 Mérida, Venezuela</p>
+                    <div class="flex justify-center space-x-6 text-sm">
+                        <span><i class="fas fa-code mr-2" style="color: var(--accent);"></i>HTML5 & CSS3</span>
+                        <span><i class="fas fa-js-square mr-2" style="color: var(--accent);"></i>JavaScript</span>
+                        <span><i class="fas fa-rocket mr-2" style="color: var(--accent);"></i>Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Planes de
+                    <span style="color: var(--primary);">Servicios</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Elige el plan perfecto para tu proyecto. Todos incluyen diseño responsive, optimización SEO y despliegue profesional.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Landing Express Básico -->
+                <div class="service-card card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100 fade-in relative overflow-hidden">
+                    <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-green-500 to-green-600 text-white text-center py-2">
+                        <span class="text-lg">🚀</span>
+                        <span class="font-bold ml-2">BÁSICO</span>
+                    </div>
+                    <div class="text-center pt-8 service-card-content">
+                        <h3 class="text-2xl font-bold mb-2">Landing Express</h3>
+                        <p class="text-gray-600 mb-4">Captación simple</p>
+                        <div class="price-badge mb-6">$120</div>
+                        <p class="text-sm text-gray-600 mb-6">Validación rápida de idea / Captación simple de leads. 3 Secciones de landing page personalizadas.</p>
+
+                        <div class="space-y-3 mb-4 text-left">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Entrega:</span>
+                                <span class="font-semibold text-sm">3 Días</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Páginas:</span>
+                                <span class="font-semibold text-sm">1</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Revisiones:</span>
+                                <span class="font-semibold text-sm">2</span>
+                            </div>
+                        </div>
+
+                        <div class="service-card-expanded">
+                            <hr class="my-3">
+                            <div class="space-y-2 mb-6">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Carga de Contenido</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-times text-red-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Formulario de Suscripción</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-times text-red-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Integración de respuesta automática</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Optimización de la velocidad</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Iconos de redes sociales</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-times text-red-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Configuración de alojamiento</span>
+                                </div>
+                            </div>
+
+                            <div class="service-card-button">
+                                <a href="https://es.pro.fiverr.com/s/6YD72VA" target="_blank" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold block text-center">
+                                    <i class="fab fa-fiverr mr-2"></i>Contratar en Fiverr
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Landing PRO CRO Estándar -->
+                <div class="service-card card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100 fade-in relative overflow-hidden">
+                    <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-blue-500 to-blue-600 text-white text-center py-2">
+                        <span class="text-lg">🌟</span>
+                        <span class="font-bold ml-2">ESTÁNDAR</span>
+                    </div>
+                    <div class="text-center pt-8 service-card-content">
+                        <h3 class="text-2xl font-bold mb-2">Landing PRO CRO</h3>
+                        <p class="text-gray-600 mb-4">Conversión Optimizada</p>
+                        <div class="price-badge mb-6">$200</div>
+                        <p class="text-sm text-gray-600 mb-6">Conversión Optimizada / Generación de Leads de Calidad. 5 Secciones de CRO esencial.</p>
+
+                        <div class="space-y-3 mb-4 text-left">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Entrega:</span>
+                                <span class="font-semibold text-sm">5 Días</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Páginas:</span>
+                                <span class="font-semibold text-sm">1</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Revisiones:</span>
+                                <span class="font-semibold text-sm">3</span>
+                            </div>
+                        </div>
+
+                        <div class="service-card-expanded">
+                            <hr class="my-3">
+                            <div class="space-y-2 mb-6">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Carga de Contenido</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Formulario de Suscripción</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-times text-red-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Integración de respuesta automática</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Optimización de la velocidad</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Iconos de redes sociales</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-times text-red-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Configuración de alojamiento</span>
+                                </div>
+                            </div>
+
+                            <div class="service-card-button">
+                                <a href="https://es.pro.fiverr.com/s/6YD72VA" target="_blank" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold block text-center">
+                                    <i class="fab fa-fiverr mr-2"></i>Contratar en Fiverr
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Corporativa De Primera Calidad -->
+                <div class="service-card card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100 fade-in relative overflow-hidden">
+                    <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-purple-500 to-purple-600 text-white text-center py-2">
+                        <span class="text-lg">💎</span>
+                        <span class="font-bold ml-2">DE PRIMERA CALIDAD</span>
+                    </div>
+                    <div class="text-center pt-8 service-card-content">
+                        <h3 class="text-2xl font-bold mb-2">Web Corporativa</h3>
+                        <p class="text-gray-600 mb-4">Máxima Autoridad</p>
+                        <div class="price-badge mb-6">$600</div>
+                        <p class="text-sm text-gray-600 mb-6">Máxima Autoridad y Presencia Digital. 5 páginas conectadas y 8 a 10 secciones principales.</p>
+
+                        <div class="space-y-3 mb-4 text-left">
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Entrega:</span>
+                                <span class="font-semibold text-sm">10 Días</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Páginas:</span>
+                                <span class="font-semibold text-sm">5</span>
+                            </div>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm">Revisiones:</span>
+                                <span class="font-semibold text-sm">5</span>
+                            </div>
+                        </div>
+
+                        <div class="service-card-expanded">
+                            <hr class="my-3">
+                            <div class="space-y-2 mb-6">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Carga de Contenido</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Formulario de Suscripción</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Integración de respuesta automática</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Optimización de la velocidad</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm">Iconos de redes sociales</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm"></i>
+                                    <span class="text-sm text-xs">Configuración de alojamiento<br>($30 extra, si no está en el paquete)</span>
+                                </div>
+                            </div>
+
+                            <div class="service-card-button">
+                                <a href="https://es.pro.fiverr.com/s/6YD72VA" target="_blank" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold block text-center">
+                                    <i class="fab fa-fiverr mr-2"></i>Contratar en Fiverr
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automatización con Make -->
+                <div class="service-card card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100 fade-in relative overflow-hidden">
+                    <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-center py-2">
+                        <span class="text-lg">🤖</span>
+                        <span class="font-bold ml-2">AUTOMATIZACIÓN IA</span>
+                    </div>
+                    <div class="text-center pt-8">
+                        <h3 class="text-2xl font-bold mb-2">Make</h3>
+                        <p class="text-gray-600 mb-4">Gestión de Comunicación y Contenido</p>
+                        <div class="text-sm text-gray-600 mb-6">
+                            Diseño de flujos de trabajo ágiles que conectan aplicaciones de comunicación con IA.
+                        </div>
+
+                        <div class="space-y-3 mb-8 text-left">
+                            <div class="space-y-2">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm mt-1"></i>
+                                    <span class="text-sm"><strong>Automatización de Procesos:</strong> Clasificación, priorización y generación de borradores de respuestas</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm mt-1"></i>
+                                    <span class="text-sm"><strong>Gestión Inteligente de Citas:</strong> Sincronización de calendarios y notificaciones personalizadas</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm mt-1"></i>
+                                    <span class="text-sm"><strong>Generación de Contenido:</strong> Creación de borradores de newsletters y textos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold block text-center">
+                            <i class="fas fa-envelope mr-2"></i>Solicitar Cotización
+                        </a>
+                        <p class="text-xs text-gray-500 mt-2">Cotización personalizada - No disponible en plataformas</p>
+                    </div>
+                </div>
+
+                <!-- Automatización con n8n -->
+                <div class="service-card card-hover bg-white rounded-2xl p-8 shadow-lg border border-gray-100 fade-in relative overflow-hidden">
+                    <div class="absolute top-0 left-0 right-0 bg-gradient-to-r from-teal-500 to-cyan-500 text-white text-center py-2">
+                        <span class="text-lg">⚡</span>
+                        <span class="font-bold ml-2">AUTOMATIZACIÓN AVANZADA</span>
+                    </div>
+                    <div class="text-center pt-8">
+                        <h3 class="text-2xl font-bold mb-2">n8n en (local y Self-Hosted)</h3>
+                        <p class="text-gray-600 mb-4">Procesos de Gestión y Asistencia</p>
+                        <div class="text-sm text-gray-600 mb-6">
+                            Desarrollo de soluciones avanzadas y self-hosted para procesos complejos con máximo control.
+                        </div>
+
+                        <div class="space-y-3 mb-8 text-left">
+                            <div class="space-y-2">
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm mt-1"></i>
+                                    <span class="text-sm"><strong>Ciclo Correo/Cita Completo:</strong> Procesamiento de clientes, segmentación y secuencias autónomas</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm mt-1"></i>
+                                    <span class="text-sm"><strong>Asistentes con IA:</strong> Lectura de documentos, OCR, verificación y actualización de bases de datos</span>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-check text-green-500 mr-2 text-sm mt-1"></i>
+                                    <span class="text-sm"><strong>Contenido Estructurado:</strong> Generación de reportes y templates con formatos específicos</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="btn-primary text-white px-6 py-3 rounded-lg font-semibold block text-center">
+                            <i class="fas fa-envelope mr-2"></i>Solicitar Cotización
+                        </a>
+                        <p class="text-xs text-gray-500 mt-2">Cotización personalizada - No disponible en plataformas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                        Sobre
+                        <span style="color: var(--primary);">Mí</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Soy un Ingeniero en Sistemas apasionado por el desarrollo frontend, 
+                        especializado en crear experiencias web modernas y funcionales. 
+                        Con años de experiencia en el sector, ofrezco soluciones técnicas 
+                        de alta calidad adaptadas a las necesidades de cada cliente.
+                    </p>
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-graduation-cap text-2xl mr-4" style="color: var(--primary);"></i>
+                            <div>
+                                <h4 class="font-semibold">Ingeniero en Sistemas</h4>
+                                <p class="text-gray-600">Formación técnica sólida en desarrollo de software</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-2xl mr-4" style="color: var(--primary);"></i>
+                            <div>
+                                <h4 class="font-semibold">Mérida, Venezuela</h4>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-2xl mr-4" style="color: var(--primary);"></i>
+                            <div>
+                                <h4 class="font-semibold">Respuesta Rápida</h4>
+                                <p class="text-gray-600">Comunicación ágil y entregas puntuales</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">HTML5</span>
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">CSS3</span>
+                        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">JavaScript</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Tailwind CSS</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Bootstrap 5</span>
+                        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">Make</span>
+                        <span class="bg-teal-100 text-teal-800 px-3 py-1 rounded-full text-sm font-medium">n8n</span>
+                    </div>
+                </div>
+                
+                <div class="fade-in">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold mb-6 text-center">Mi Stack Tecnológico</h3>
+                        <div class="space-y-6">
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium">Frontend Development</span>
+                                    <span class="text-sm text-gray-600">85%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium">Responsive Design</span>
+                                    <span class="text-sm text-gray-600">70%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full" style="width: 70%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium">UI/UX Design</span>
+                                    <span class="text-sm text-gray-600">65%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-pink-500 to-purple-500 h-2 rounded-full" style="width: 65%"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="font-medium">Automatización con IA</span>
+                                    <span class="text-sm text-gray-600">45%</span>
+                                </div>
+                                <div class="w-full bg-gray-200 rounded-full h-2">
+                                    <div class="bg-gradient-to-r from-purple-500 to-indigo-500 h-2 rounded-full" style="width: 45%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Mi
+                    <span style="color: var(--primary);">Portafolio</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Algunos de los proyectos que he desarrollado recientemente. 
+                    Cada uno representa un desafío único y una solución creativa con tecnologías web modernas.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="portfolio-item card-hover fade-in">
+                    <img src="img1.png" alt="Sitio Web Corporativo" class="w-full h-64 object-cover portfolio-image" loading="lazy">
+                    <div class="portfolio-overlay">
+                        <div class="text-center text-white">
+                            <h3 class="text-xl font-bold mb-2">Sitio Web Corporativo</h3>
+                            <p class="mb-4">Página empresarial moderna con 6 secciones</p>
+                            <div class="flex justify-center space-x-2">
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-sm">HTML5</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-sm">Tailwind</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item card-hover fade-in">
+                    <div class="carousel-container relative w-full h-64 overflow-hidden">
+                        <div class="carousel-images flex transition-transform duration-500 ease-in-out">
+                            <img src="landing1.png" alt="Landing Page Promocional - Imagen 1" class="w-full h-64 object-cover flex-shrink-0" loading="lazy">
+                            <img src="landing2.png" alt="Landing Page Promocional - Imagen 2" class="w-full h-64 object-cover flex-shrink-0" loading="lazy">
+                            <img src="landing3.png" alt="Landing Page Promocional - Imagen 3" class="w-full h-64 object-cover flex-shrink-0" loading="lazy">
+                        </div>
+                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-indicators absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                            <span class="indicator w-2 h-2 bg-white bg-opacity-50 rounded-full cursor-pointer active"></span>
+                            <span class="indicator w-2 h-2 bg-white bg-opacity-50 rounded-full cursor-pointer"></span>
+                            <span class="indicator w-2 h-2 bg-white bg-opacity-50 rounded-full cursor-pointer"></span>
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="text-center text-white">
+                            <h3 class="text-xl font-bold mb-2">Landing Page Promocional</h3>
+                            <p class="mb-4">Página de captación con formularios integrados</p>
+                            <div class="flex justify-center space-x-2">
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-sm">HTML5</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-sm">CSS3</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item card-hover fade-in">
+                    <div class="carousel-container relative w-full h-64 overflow-hidden">
+                        <div class="carousel-images flex transition-transform duration-500 ease-in-out">
+                            <img src="porfo1.png" alt="Automatizaciones con n8n - Imagen 1" class="w-full h-64 object-cover flex-shrink-0" loading="lazy">
+                            <img src="porfol2.png" alt="Automatizaciones con n8n - Imagen 2" class="w-full h-64 object-cover flex-shrink-0" loading="lazy">
+                        </div>
+                        <button class="carousel-btn carousel-prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn carousel-next absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-all">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <div class="carousel-indicators absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                            <span class="indicator w-2 h-2 bg-white bg-opacity-50 rounded-full cursor-pointer active"></span>
+                            <span class="indicator w-2 h-2 bg-white bg-opacity-50 rounded-full cursor-pointer"></span>
+                        </div>
+                    </div>
+                    <div class="portfolio-overlay">
+                        <div class="text-center text-white">
+                            <h3 class="text-xl font-bold mb-2">Automatizaciones con n8n</h3>
+                            <p class="mb-4">Procesos de gestión y asistencia con IA avanzada</p>
+                            <div class="flex justify-center space-x-2">
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-sm">n8n</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-sm">IA</span>
+                                <span class="bg-white bg-opacity-20 px-2 py-1 rounded text-sm">Automatización</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section - COMENTADO TEMPORALMENTE HASTA TENER TESTIMONIOS REALES -->
+    <!--
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    Lo que dicen mis
+                    <span style="color: var(--primary);">clientes</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="testimonial-card fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            JM
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Juan Martínez</h4>
+                            <p class="text-sm text-gray-600">CEO TechStart</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Excelente trabajo en nuestra landing page. Muy profesional y rápido.
+                        La página quedó exactamente como la imaginamos."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            MC
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">María Castro</h4>
+                            <p class="text-sm text-gray-600">Dueña de negocio local</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Superó todas mis expectativas. Mi sitio web corporativo quedó hermoso
+                        y funciona perfectamente en todos los dispositivos."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-card fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            AR
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Ana Rodríguez</h4>
+                            <p class="text-sm text-gray-600">Blogger</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Mi blog con backend Supabase funciona de maravilla.
+                        Puedo gestionar todo mi contenido fácilmente."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    ¿Listo para comenzar tu
+                    <span style="color: var(--primary);">proyecto?</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+                    Contáctame hoy mismo y hablemos sobre cómo puedo ayudarte a llevar tu idea al siguiente nivel. 
+                    Ofrezco consultas gratuitas y presupuestos sin compromiso.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                    <a href="https://es.pro.fiverr.com/s/6YD72VA" target="_blank" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg">
+                        <i class="fab fa-fiverr mr-2"></i>Contratar en Fiverr
+                    </a>
+                    <div class="flex items-center text-gray-600">
+                        <i class="fas fa-envelope mr-2" style="color: var(--primary);"></i>
+                        <span>o escríbeme directamente</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="contact-form fade-in">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Nombre completo</label>
+                                <input type="text" id="name" name="name" required class="form-input w-full" placeholder="Tu nombre">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Correo electrónico</label>
+                                <input type="email" id="email" name="email" required class="form-input w-full" placeholder="tu@email.com">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-gray-700 mb-2">Empresa (opcional)</label>
+                            <input type="text" id="company" name="company" class="form-input w-full" placeholder="Nombre de tu empresa">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-700 mb-2">Tipo de servicio</label>
+                            <select id="service" name="service" required class="form-input w-full">
+                                <option value="">Selecciona un servicio</option>
+                                <option value="landing">Landing Page ($120)</option>
+                                <option value="corporate">Sitio Web Corporativo ($200)</option>
+                                <option value="blog">Blog con Backend ($600)</option>
+                                <option value="custom">Proyecto Personalizado</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="budget" class="block text-sm font-medium text-gray-700 mb-2">Presupuesto estimado</label>
+                            <select id="budget" name="budget" class="form-input w-full">
+                                <option value="">Selecciona tu presupuesto</option>
+                                <option value="100-300">$100 - $300</option>
+                                <option value="300-600">$300 - $600</option>
+                                <option value="600-1000">$600 - $1,000</option>
+                                <option value="1000+">$1,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-2">Descripción del proyecto</label>
+                            <textarea id="message" name="message" rows="5" required class="form-input w-full" placeholder="Cuéntame sobre tu proyecto, ideas, requisitos específicos..."></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="btn-primary text-white px-8 py-4 rounded-lg font-semibold text-lg">
+                                <i class="fas fa-paper-plane mr-2"></i>Enviar mensaje
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-bg py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="mb-6">
+                    <div class="text-2xl font-bold text-white mb-4">
+                        <i class="fas fa-code mr-2" style="color: var(--accent);"></i>
+                        DevFrontend
+                    </div>
+                    <p class="text-gray-300 max-w-2xl mx-auto">
+                        Ingeniero en Sistemas especializado en desarrollo frontend.
+                        Creando experiencias web excepcionales desde Mérida, Venezuela.
+                    </p>
+                </div>
+
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="https://es.pro.fiverr.com/s/6YD72VA" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fab fa-fiverr text-2xl"></i>
+                    </a>
+                    <a href="mailto:tuemail@gmail.com" rel="noopener" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/carlos-ivan-obando-aure-85b364351" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" rel="noopener" class="text-gray-300 hover:text-white transition-colors">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                </div>
+
+                <div class="border-t border-gray-600 pt-6">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 DevFrontend. Todos los derechos reservados.
+                        <span class="block mt-2">Desarrollado con ❤️ en Mérida, Venezuela</span>
+                    </p>
+                    <!-- Structured Data para SEO -->
+                    <script type="application/ld+json">
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "ProfessionalService",
+                        "name": "DevFrontend",
+                        "description": "Desarrollador Frontend profesional especializado en landing pages, sitios web corporativos y automatizaciones con IA",
+                        "url": "https://tusitio.com",
+                        "logo": "https://tusitio.com/resources/hero-image.png",
+                        "address": {
+                            "@type": "PostalAddress",
+                            "addressLocality": "Mérida",
+                            "addressCountry": "VE"
+                        },
+                        "founder": {
+                            "@type": "Person",
+                            "name": "Carlos Iván Obando Aure",
+                            "jobTitle": "Frontend Developer",
+                            "sameAs": "https://www.linkedin.com/in/carlos-ivan-obando-aure-85b364351"
+                        },
+                        "serviceType": ["Web Development", "Frontend Development", "Automation"],
+                        "areaServed": "Worldwide",
+                        "priceRange": "$$",
+                        "hasOfferCatalog": {
+                            "@type": "OfferCatalog",
+                            "name": "Servicios Web",
+                            "itemListElement": [
+                                {
+                                    "@type": "Offer",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Landing Express",
+                                        "description": "Landing page básica con formularios"
+                                    },
+                                    "price": "120",
+                                    "priceCurrency": "USD"
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Landing PRO CRO",
+                                        "description": "Landing page optimizada para conversión"
+                                    },
+                                    "price": "200",
+                                    "priceCurrency": "USD"
+                                },
+                                {
+                                    "@type": "Offer",
+                                    "itemOffered": {
+                                        "@type": "Service",
+                                        "name": "Web Corporativa",
+                                        "description": "Sitio web corporativo completo"
+                                    },
+                                    "price": "600",
+                                    "priceCurrency": "USD"
+                                }
+                            ]
+                        }
+                    }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
