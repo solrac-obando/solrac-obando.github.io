@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Efecto de parallax en el hero
-    window.addEventListener('scroll', function() {
+    /* window.addEventListener('scroll', function() {
         const scrolled = window.pageYOffset;
         const hero = document.querySelector('.hero-bg');
         
@@ -301,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const speed = scrolled * 0.5;
             hero.style.transform = `translateY(${speed}px)`;
         }
-    });
+    }); */
 
     // Activar animaciones cuando el DOM esté listo
     document.addEventListener('DOMContentLoaded', function() {
