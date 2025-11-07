@@ -1,0 +1,64 @@
+{
+  "faqs": [
+    {
+      "keywords": ["quien eres", "quien es", "sobre ti", "acerca de", "presentacion"],
+      "question": "¿Quién eres?",
+      "answer": "Soy Carlos Ivan Obando Aure, Ingeniero en Sistemas especializado en desarrollo frontend, automatización con Python, N8n y Make. Creo experiencias web modernas y funcionales desde Mérida, Venezuela."
+    },
+    {
+      "keywords": ["servicios", "que ofreces", "que haces", "planes"],
+      "question": "¿Qué servicios ofreces?",
+      "answer": "Ofrezco tres planes principales: Landing Express ($120) para captación simple, Landing PRO CRO ($200) para conversión optimizada, y Web Corporativa ($600) para máxima autoridad con 5 páginas. También automatizaciones con Make y n8n para gestión de comunicación y procesos avanzados."
+    },
+    {
+      "keywords": ["precios", "cuanto cuesta", "tarifas", "costo", "contratar", "contratar servicio", "quiero", "necesito"],
+      "question": "¿Cuáles son los precios de tus servicios?",
+      "answer": "Los precios son: Landing Express $120, Landing PRO CRO $200, Web Corporativa $600. Las automatizaciones con Make y n8n tienen cotización personalizada. Si necesitas despliegue de la aplicación, hay un cargo adicional de $30.\n\n¿Te gustaría contratar algún servicio? ¡Puedo ayudarte!"
+    },
+    {
+      "keywords": ["tiempo", "entrega", "cuanto tarda", "dias"],
+      "question": "¿Cuánto tiempo toma la entrega?",
+      "answer": "Los tiempos de entrega son: 3 días para Landing Express, 5 días para Landing PRO CRO, y 10 días para Web Corporativa. Incluye revisiones gratuitas según el plan."
+    },
+    {
+      "keywords": ["tecnologias", "herramientas", "stack", "lenguajes"],
+      "question": "¿Qué tecnologías utilizas?",
+      "answer": "Trabajo con HTML5, CSS3, JavaScript, Tailwind CSS, Bootstrap 5, y herramientas de automatización como Make y n8n. Especializado en desarrollo frontend responsive y optimizado."
+    },
+    {
+      "keywords": ["contacto", "como contactar", "email", "telefono"],
+      "question": "¿Cómo puedo contactarte?",
+      "answer": "Puedes contactarme a través del formulario en la sección de contacto de esta página, o directamente en Fiverr: https://es.pro.fiverr.com/s/6YD72VA. También en LinkedIn: https://www.linkedin.com/in/carlos-ivan-obando-aure-85b364351."
+    },
+    {
+      "keywords": ["despliegue", "hosting", "deploy", "publicar"],
+      "question": "¿Ofreces despliegue de la aplicación?",
+      "answer": "Sí, puedo realizar el despliegue de tu aplicación web. Sin embargo, este servicio tiene un costo adicional de $30. Incluye configuración de alojamiento y optimización para producción."
+    },
+    {
+      "keywords": ["revisiones", "cambios", "modificaciones"],
+      "question": "¿Cuántas revisiones incluye cada plan?",
+      "answer": "Landing Express incluye 2 revisiones, Landing PRO CRO incluye 3 revisiones, y Web Corporativa incluye 5 revisiones. Revisiones adicionales pueden tener costo extra."
+    },
+    {
+      "keywords": ["ubicacion", "donde estas", "venezuela", "merida"],
+      "question": "¿Dónde te encuentras?",
+      "answer": "Estoy ubicado en Mérida, Venezuela. Trabajo de forma remota y atiendo clientes de todo el mundo."
+    },
+    {
+      "keywords": ["portafolio", "proyectos", "trabajos anteriores"],
+      "question": "¿Puedo ver tu portafolio?",
+      "answer": "Sí, en la sección 'Portafolio' de esta página puedes ver algunos de mis proyectos recientes, incluyendo sitios web corporativos, landing pages y automatizaciones con n8n."
+    },
+    {
+      "keywords": ["garantia", "soporte", "mantenimiento"],
+      "question": "¿Ofreces garantía o soporte post-entrega?",
+      "answer": "Ofrezco soporte básico durante los primeros 30 días post-entrega. Para mantenimiento continuo o soporte extendido, podemos discutir planes personalizados."
+    },
+    {
+      "keywords": ["pago", "como pagar", "metodos"],
+      "question": "¿Cómo se realiza el pago?",
+      "answer": "Los pagos se realizan principalmente a través de Fiverr, que acepta tarjetas de crédito, PayPal y otros métodos seguros. Para proyectos personalizados, podemos acordar otras formas."
+    }
+  ]
+}
