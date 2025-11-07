@@ -1,4 +1,3 @@
-// Configuración de Particles.js para el hero
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializar particles.js
     if (typeof particlesJS !== 'undefined') {
@@ -158,87 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Formulario de contacto con integración Make
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-
-            // Obtener datos del formulario
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-
-            // Validación básica
-            if (!data.name || !data.email || !data.message || !data.service) {
-                showNotification('Por favor completa todos los campos requeridos', 'error');
-                return;
-            }
-
-            // Validación de email
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(data.email)) {
-                showNotification('Por favor ingresa un email válido', 'error');
-                return;
-            }
-
-            // Preparar datos para el webhook
-            const webhookData = {
-                name: data.name,
-                email: data.email,
-                company: data.company || '',
-                service: data.service,
-                budget: data.budget || '',
-                message: data.message,
-                timestamp: new Date().toISOString(),
-                source: 'portfolio_web'
-            };
-
-            // Cambiar estado del botón
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
-            submitBtn.disabled = true;
-
-            try {
-                // Enviar datos al webhook de Make
-                const response = await fetch('https://hook.eu2.make.com/fmneaimq30r6ryr9skbht53nxce36amf', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(webhookData)
-                });
-
-                if (response.ok) {
-                    // Éxito
-                    showNotification('¡Mensaje enviado exitosamente! Me pondré en contacto contigo pronto.', 'success');
-
-                    // Limpiar formulario
-                    this.reset();
-
-                    // Enviar evento a analytics si está disponible
-                    if (typeof gtag !== 'undefined') {
-                        gtag('event', 'form_submission', {
-                            event_category: 'engagement',
-                            event_label: 'contact_form'
-                        });
-                    }
-                } else {
-                    throw new Error('Error en el envío');
-                }
-
-            } catch (error) {
-                console.error('Error al enviar formulario:', error);
-                showNotification('Error al enviar el mensaje. Por favor intenta de nuevo o contáctame directamente.', 'error');
-            } finally {
-                // Restaurar botón
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            }
-        });
-    }
-
     // Función para mostrar notificaciones
     function showNotification(message, type = 'info') {
         // Crear elemento de notificación
@@ -292,34 +210,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Efecto de parallax en el hero
-    /* window.addEventListener('scroll', function() {
-        const scrolled = window.pageYOffset;
-        const hero = document.querySelector('.hero-bg');
-        
-        if (hero && window.innerWidth > 768) {
-            const speed = scrolled * 0.5;
-            hero.style.transform = `translateY(${speed}px)`;
-        }
-    }); */
+    // Animación de escritura para el título principal
+    const mainTitle = document.querySelector('h1');
+    if (mainTitle) {
+        const originalText = mainTitle.textContent;
+        // typeWriter(mainTitle, originalText, 50);
+    }
 
-    // Activar animaciones cuando el DOM esté listo
-    document.addEventListener('DOMContentLoaded', function() {
-        // Animación de escritura para el título principal
-        const mainTitle = document.querySelector('h1');
-        if (mainTitle) {
-            const originalText = mainTitle.textContent;
-            // typeWriter(mainTitle, originalText, 50);
-        }
-
-        // Animación de aparición de elementos del portafolio
-        const portfolioItems = document.querySelectorAll('.portfolio-item');
-        portfolioItems.forEach((item, index) => {
-            setTimeout(() => {
-                item.style.opacity = '1';
-                item.style.transform = 'translateY(0)';
-            }, index * 200);
-        });
+    // Animación de aparición de elementos del portafolio
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    portfolioItems.forEach((item, index) => {
+        setTimeout(() => {
+            item.style.opacity = '1';
+            item.style.transform = 'translateY(0)';
+        }, index * 200);
     });
 
     // Cerrar menú móvil al hacer click en un enlace
@@ -346,17 +250,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Prevenir el comportamiento por defecto del formulario si JavaScript está deshabilitado
-    if (typeof window.addEventListener === 'function') {
-        // JavaScript está habilitado, el formulario funcionará normalmente
-    } else {
-        // JavaScript está deshabilitado, mostrar mensaje alternativo
-        const form = document.getElementById('contact-form');
-        if (form) {
-            form.innerHTML = '<p class="text-center text-gray-600">Por favor habilita JavaScript para usar el formulario de contacto.</p>';
-        }
-    }
-
     // Función para manejar el estado de carga de la página
     function handlePageLoad() {
         const loader = document.querySelector('.page-loader');
@@ -370,49 +263,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Agregar clase para ocultar el loader cuando la página esté completamente cargada
     window.addEventListener('load', handlePageLoad);
-
-    // Funcionalidad adicional para mejorar la experiencia del usuario
-    
-    // Detectar cuando el usuario se acerca al final de la página
-    window.addEventListener('scroll', function() {
-        const scrollPosition = window.innerHeight + window.scrollY;
-        const bodyHeight = document.body.offsetHeight;
-        
-        // Si el usuario está cerca del final, mostrar CTA flotante
-        if (scrollPosition > bodyHeight - 1000) {
-            showFloatingCTA();
-        } else {
-            hideFloatingCTA();
-        }
-    });
-
-    // CTA flotante
-    function showFloatingCTA() {
-        let floatingCTA = document.getElementById('floating-cta');
-        if (!floatingCTA) {
-            floatingCTA = document.createElement('div');
-            floatingCTA.id = 'floating-cta';
-            floatingCTA.className = 'fixed bottom-6 right-6 z-40 transform translate-x-full transition-transform duration-300';
-            floatingCTA.innerHTML = `
-                <a href="https://fiverr.com" target="_blank" class="btn-primary text-white px-6 py-3 rounded-full font-semibold shadow-lg flex items-center">
-                    <i class="fab fa-fiverr mr-2"></i>
-                    Contratar en Fiverr
-                </a>
-            `;
-            document.body.appendChild(floatingCTA);
-        }
-        
-        setTimeout(() => {
-            floatingCTA.classList.remove('translate-x-full');
-        }, 100);
-    }
-
-    function hideFloatingCTA() {
-        const floatingCTA = document.getElementById('floating-cta');
-        if (floatingCTA) {
-            floatingCTA.classList.add('translate-x-full');
-        }
-    }
 
     // Mejorar la accesibilidad
     document.addEventListener('keydown', function(e) {
@@ -570,4 +420,276 @@ document.addEventListener('DOMContentLoaded', function() {
     initPortfolioCarousel();
 
     console.log('✅ Sitio web cargado correctamente. ¡Bienvenido a mi portfolio!');
+    
+    // Chatbot de FAQ basado en reglas
+    class FAQChatbot {
+        constructor() {
+            this.faqData = null;
+            this.chatContainer = null;
+            this.isOpen = false;
+            window.faqChatbot = this;
+            this.init();
+        }
+
+        async init() {
+            try {
+                // Cargar datos del FAQ
+                const response = await fetch('faq.json');
+                this.faqData = await response.json();
+
+                // Crear interfaz del chatbot
+                this.createChatInterface();
+
+                // Agregar event listeners
+                this.addEventListeners();
+
+                console.log('🤖 Chatbot FAQ inicializado correctamente');
+            } catch (error) {
+                console.error('Error al inicializar el chatbot:', error);
+            }
+        }
+
+        createChatInterface() {
+            // Crear contenedor principal del chatbot flotante
+            this.chatContainer = document.createElement('div');
+            this.chatContainer.id = 'faq-chatbot';
+            this.chatContainer.className = 'fixed bottom-6 right-6 z-50';
+
+            // HTML del chatbot flotante
+            this.chatContainer.innerHTML = `
+                <div class="chatbot-toggle bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-full w-14 h-14 flex items-center justify-center cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300">
+                    <i class="fas fa-comments text-lg"></i>
+                </div>
+
+                <div class="chatbot-window hidden bg-white rounded-2xl shadow-2xl border border-gray-200 w-80 h-96 flex flex-col overflow-hidden absolute bottom-16 right-0">
+                    <!-- Header -->
+                    <div class="bg-gradient-to-r from-green-500 to-blue-500 text-white p-3 flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-white bg-opacity-20 rounded-full flex items-center justify-center mr-2">
+                                <i class="fas fa-robot text-sm"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm">Asistente Virtual</h3>
+                                <p class="text-xs opacity-90">Preguntas Frecuentes</p>
+                            </div>
+                        </div>
+                        <button class="chatbot-close text-white hover:text-gray-200 transition-colors">
+                            <i class="fas fa-times text-sm"></i>
+                        </button>
+                    </div>
+
+                    <!-- Chat Messages -->
+                    <div class="chat-messages flex-1 p-3 overflow-y-auto bg-gray-50">
+                        <div class="message bot-message mb-3">
+                            <div class="message-content bg-white p-2 rounded-lg shadow-sm border text-sm">
+                                <p class="text-gray-800">¡Hola! Soy el asistente de Carlos. ¿En qué puedo ayudarte?</p>
+                                <p class="text-xs text-gray-500 mt-1">Pregunta sobre servicios o precios</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Chat Input -->
+                    <div class="chat-input p-3 bg-white border-t border-gray-200">
+                        <div class="flex gap-2">
+                            <input type="text" placeholder="Escribe tu pregunta..." class="chat-input-field flex-1 px-2 py-1 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-green-500 focus:border-transparent">
+                            <button class="chat-send-btn bg-green-500 text-white px-3 py-1 rounded-lg hover:bg-green-600 transition-colors">
+                                <i class="fas fa-paper-plane text-xs"></i>
+                            </button>
+                        </div>
+                        <div class="suggested-questions mt-2 flex flex-wrap gap-1">
+                            <button class="suggested-btn text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full hover:bg-green-100 transition-colors">Servicios</button>
+                            <button class="suggested-btn text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full hover:bg-green-100 transition-colors">Precios</button>
+                            <button class="suggested-btn text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full hover:bg-green-100 transition-colors">Tiempo</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Agregar al DOM
+            document.body.appendChild(this.chatContainer);
+        }
+
+        addEventListeners() {
+            const toggleBtn = this.chatContainer.querySelector('.chatbot-toggle');
+            const closeBtn = this.chatContainer.querySelector('.chatbot-close');
+            const sendBtn = this.chatContainer.querySelector('.chat-send-btn');
+            const inputField = this.chatContainer.querySelector('.chat-input-field');
+            const suggestedBtns = this.chatContainer.querySelectorAll('.suggested-btn');
+
+            // Toggle chatbot
+            toggleBtn.addEventListener('click', () => this.toggleChat());
+
+            // Close chatbot
+            closeBtn.addEventListener('click', () => this.closeChat());
+
+            // Send message
+            sendBtn.addEventListener('click', () => this.sendMessage());
+
+            // Enter key to send
+            inputField.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    this.sendMessage();
+                }
+            });
+
+            // Suggested questions
+            suggestedBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const question = e.target.textContent;
+                    this.sendSuggestedQuestion(question);
+                });
+            });
+        }
+
+        toggleChat() {
+            const chatWindow = this.chatContainer.querySelector('.chatbot-window');
+            const toggleBtn = this.chatContainer.querySelector('.chatbot-toggle');
+
+            if (this.isOpen) {
+                this.closeChat();
+            } else {
+                chatWindow.classList.remove('hidden');
+                toggleBtn.style.transform = 'scale(0.9)';
+                setTimeout(() => {
+                    toggleBtn.style.transform = 'scale(1)';
+                }, 150);
+                this.isOpen = true;
+            }
+        }
+
+        closeChat() {
+            const chatWindow = this.chatContainer.querySelector('.chatbot-window');
+            const toggleBtn = this.chatContainer.querySelector('.chatbot-toggle');
+
+            chatWindow.classList.add('hidden');
+            toggleBtn.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                toggleBtn.style.transform = 'scale(1)';
+            }, 150);
+            this.isOpen = false;
+        }
+
+        sendMessage() {
+            const inputField = this.chatContainer.querySelector('.chat-input-field');
+            const message = inputField.value.trim();
+
+            if (message) {
+                this.addMessage(message, 'user');
+                inputField.value = '';
+
+                // Procesar la pregunta y responder
+                setTimeout(() => {
+                    const response = this.processQuestion(message);
+                    this.addMessage(response, 'bot');
+                }, 500);
+            }
+        }
+
+        sendSuggestedQuestion(question) {
+            this.addMessage(question, 'user');
+
+            setTimeout(() => {
+                const response = this.processQuestion(question);
+                this.addMessage(response, 'bot');
+            }, 500);
+        }
+
+        addMessage(content, type) {
+            const messagesContainer = this.chatContainer.querySelector('.chat-messages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${type}-message mb-4`;
+
+            if (type === 'user') {
+                messageDiv.innerHTML = `
+                    <div class="message-content bg-blue-500 text-white p-3 rounded-lg shadow-sm ml-auto max-w-xs">
+                        <p>${content}</p>
+                    </div>
+                `;
+            } else {
+                messageDiv.innerHTML = `
+                    <div class="message-content bg-white p-3 rounded-lg shadow-sm border max-w-xs">
+                        <p class="text-gray-800">${content}</p>
+                    </div>
+                `;
+            }
+
+            messagesContainer.appendChild(messageDiv);
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }
+
+        processQuestion(question) {
+            if (!this.faqData || !this.faqData.faqs) {
+                return "Lo siento, no puedo acceder a la información en este momento. Por favor, contacta directamente con Carlos.";
+            }
+
+            const userQuestion = question.toLowerCase();
+
+            // Buscar coincidencias por palabras clave
+            for (const faq of this.faqData.faqs) {
+                for (const keyword of faq.keywords) {
+                    if (userQuestion.includes(keyword.toLowerCase())) {
+                        return faq.answer;
+                    }
+                }
+            }
+
+            // Si no encuentra coincidencia exacta, buscar similitudes
+            const bestMatch = this.findBestMatch(question);
+            if (bestMatch) {
+                return bestMatch.answer;
+            }
+
+            // Respuesta por defecto
+            return "No encontré una respuesta exacta para tu pregunta. Te recomiendo revisar la sección de servicios o contactar directamente con Carlos para más información específica.";
+        }
+
+        findBestMatch(question) {
+            let bestMatch = null;
+            let bestScore = 0;
+
+            for (const faq of this.faqData.faqs) {
+                let score = 0;
+                const questionWords = question.toLowerCase().split(' ');
+
+                for (const word of questionWords) {
+                    if (word.length > 2) { // Ignorar palabras muy cortas
+                        for (const keyword of faq.keywords) {
+                            if (keyword.toLowerCase().includes(word) || word.includes(keyword.toLowerCase())) {
+                                score += 1;
+                            }
+                        }
+                    }
+                }
+
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestMatch = faq;
+                }
+            }
+
+            return bestScore > 0 ? bestMatch : null;
+        }
+    }
+
+    // Inicializar el chatbot
+    new FAQChatbot();
+
+    console.log('🤖 Chatbot FAQ cargado correctamente');
+
+    // Función global para abrir el chatbot desde botones externos
+    function openChatbot() {
+        if (window.faqChatbot) {
+            window.faqChatbot.toggleChat();
+        } else {
+            // Si el chatbot no está inicializado, esperar un momento
+            setTimeout(() => {
+                if (window.faqChatbot) {
+                    window.faqChatbot.toggleChat();
+                }
+            }, 500);
+        }
+    }
+
+    // Exportar función global para uso en GitHub Pages
+    window.openChatbot = openChatbot;
 });
